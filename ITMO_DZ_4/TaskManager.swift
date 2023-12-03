@@ -17,7 +17,6 @@ class TaskManager {
     var tasks: [Task] = []
     private let queue = DispatchQueue(label: "task manager", attributes: .concurrent)
 
-    
     func add(_ task: Task) -> Void {
         queue.async(flags: .barrier) {
             self.tasks.append(task)
